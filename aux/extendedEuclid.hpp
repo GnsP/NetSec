@@ -5,6 +5,12 @@
 
 namespace gnsp{ namespace NetSec{ namespace aux{
 
+template<typename T>
+T GCD(T a, T b){
+	if(b==0) return a;
+	return GCD(b, a%b);
+}
+
 class extendedEuclideanEngine{
     public:
         extendedEuclideanEngine(){}

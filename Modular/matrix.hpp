@@ -6,7 +6,7 @@ namespace gnsp{ namespace NetSec { namespace mod {
 
 class genericModularMatrixException: public std::exception{
     virtual const char *what() const throw(){
-        return "<MATRIX.HPP> Some piece of shit just got broken down, debug at your own risk.";
+        return "<MATRIX.HPP> Something just got broken down, debug at your own risk.";
     }
 } matrixGenericException;
 
@@ -44,7 +44,13 @@ class matrix{
 template<typename T, std::size_t R, std::size_t C>
 class subMatrixAdapter{
 	public:
-		subMatrixAdapter(){}
+		subMatrixAdapter(matrix &mat):mat_(mat){}
+
+
+
+	private:
+		matrix &mat_;
+
 };
 
 
